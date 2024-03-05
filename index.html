@@ -4,47 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>BLOG POST</title>
 </head>
-    <style>
-         form {
-            width: 30%;
-            margin: auto;
-            padding: 10px 0;
-            border: 3px solid black;
+<style>
+    form {
+        width: 30%;
+        margin: auto;
+        padding: 10px 0;
+        border: 3px solid black;
+    }
+
+    h1 {
+        margin: auto;
+        text-align: center;
+    }
+
+    input,
+    textarea,
+    select {
+        display: block;
+        padding: 10px;
+        border: 2px solid black;
+        margin: auto;
+        margin-bottom: 12px;
+    }
+
+    #post div img {
+        height: 250px;
+        width: 250px;
+        border: 2px black solid;
+        margin: 3px;
+    }
+
+    #post {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    @media(max-width:700px) {
+        #post {
+            grid-template-columns: repeat(3, 2fr);
         }
-        h1{
-            margin: auto;  
-            text-align: center;
-        }
-         input,textarea,
-        select {
-            display: block;
-            padding: 10px;
-            border: 2px solid black;
-            margin: auto;
-            margin-bottom: 12px;
-        }
-        #data div img{
-            height: 250px;
-            width: 250px;
+
+        #post div img {
+            height: 150px;
+            width: 150px;
             border: 2px black solid;
+            margin: 3px;
         }
-        #data{
-            display:grid;
-            grid-template-columns: repeat(4,1fr);
-        }
-        .title{
-            color: black;
-        }
-    </style>
+    }
+
+    .title {
+        color: black;
+    }
+</style>
 
 <body>
-    
+
     <h1>New Blog</h1>
 
     <form id="form">
-        <input type="url" id="img" placeholder="img" >
+        <input type="url" id="img" placeholder="img">
         <input type="text" id="title" placeholder="Name of Product" required>
         <textarea id="content" placeholder="Content" required></textarea>
         <select id="category" required>
@@ -54,8 +74,8 @@
         </select>
         <input type="submit">
     </form>
-<hr>
-    <div id="data"></div>
+    <hr>
+    <div id="post"></div>
 
 </body>
 <script src="./index.js"></script>

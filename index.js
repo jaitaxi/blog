@@ -1,35 +1,44 @@
-let products = []
+let blog = []
 
-const UImaker = () => {
-    document.getElementById("data").innerHTML = ""
-    for (let i = 0; i < products.length; i++) {
+const blogpost = () => {
+    document.getElementById("post").innerHTML = ""
+    for (let i = 0; i < blog.length; i++) {
         let img = document.createElement("img")
-        img.src = products[i].img
+        img.src = blog[i].img
 
         let title = document.createElement("h2")
-        title.innerHTML = products[i].title
+        title.innerHTML = blog[i].title
 
         let category = document.createElement("h3")
-        category.innerHTML = products[i].category
+        category.innerHTML = blog[i].category
 
         let content = document.createElement("p")
-        content.innerHTML = products[i].content
+        content.innerHTML = blog[i].content
+
+        let like=document.createElement("button")
+        like.innerHTML="Like"
+        like.addEventListener("click",()=>{
+            alert("You like this post!!!")
+            blogpost();
+        })
 
         let  btn = document.createElement("button")
         btn.innerHTML = "Delete"
         btn.addEventListener("click", ()=> {
-            ev.target.parentNode.remove()
+           blog.splice(i,1)
+
+           blogpost();
 
         });
 
         let div = document.createElement("div")
-        div.append(img, title, category, content)
+        div.append(img, title, category, content,like, btn)
 
         
 
         title.setAttribute("class", "title")
 
-        document.getElementById("data").append(div)
+        document.getElementById("post").append(div)
 
         
     }
@@ -56,9 +65,9 @@ const handlesubmit = (e) => {
         category: category
 
     }
-    products.push(product)
+    blog.push(product)
 
-    UImaker()
+    blogpost()
 }
 
 
