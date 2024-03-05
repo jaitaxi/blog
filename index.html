@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+    <style>
+         form {
+            width: 30%;
+            margin: auto;
+            padding: 10px 0;
+            border: 3px solid black;
+        }
+        h1{
+            margin: auto;  
+            text-align: center;
+        }
+         input,textarea,
+        select {
+            display: block;
+            padding: 10px;
+            border: 2px solid black;
+            margin: auto;
+            margin-bottom: 12px;
+        }
+        #data div img{
+            height: 250px;
+            width: 250px;
+            border: 2px black solid;
+        }
+        #data{
+            display:grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .title{
+            color: black;
+        }
+    </style>
+
+<body>
+    
+    <h1>New Blog</h1>
+
+    <form id="form">
+        <input type="url" id="img" placeholder="img" >
+        <input type="text" id="title" placeholder="Name of Product" required>
+        <textarea id="content" placeholder="Content" required></textarea>
+        <select id="category" required>
+            <option value="Select category">Select category</option>
+            <option value="food">Food</option>
+            <option value="Healthcare">Healthcare</option>
+        </select>
+        <input type="submit">
+    </form>
+<hr>
+    <div id="data"></div>
+
+</body>
+<script src="./index.js"></script>
+
+</html>
